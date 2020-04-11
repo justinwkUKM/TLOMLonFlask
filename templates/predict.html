@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>MLIndexPage</title>
+{% endblock head %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<main role="main" class="container">
+  <div class="jumbotron">
+    <h1>TLO Forecast example</h1>
+    {% if name %}
+    <p class="lead">This example is a quick exercise to illustrate how the TLO forecasting application works. The forecast is <h2><b>{{name}}</b> orders</h2></p>
+    {% endif %}
+    <a class="btn btn-lg btn-primary" href="/" role="button">Forecast again &raquo;</a>
+  </div>
+</main>
+
+{% endblock body %}

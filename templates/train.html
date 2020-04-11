@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>MLIndexPage</title>
+{% endblock head %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<main role="main" class="container">
+  <div class="jumbotron">
+    <h1>TLO Forecast Model Training</h1>
+   
+    <p class="lead">This example is a quick exercise to illustrate how the TLO forecasting application works. The forecast is <b></b></p>
+    
+    <form action="/train" method="post">
+    <div>
+      <button  class="btn btn-outline-success" type="submit">Train Now</button>
+    </div>
+    
+  </form>
+  </div>
+</main>
+
+{% endblock body %}

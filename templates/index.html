@@ -5,5 +5,28 @@
 {% endblock head %}
 
 {% block body %}
-  <h1>Hi how are you?</h1>
+<br>
+<br>
+<br>
+<h1 >Lazada Time-Series Forecasts</h1>
+<br>
+<br>
+<br>
+
+<form action="/predict" method="post">
+    <div>
+      {% if error %}
+        <p>Please enter the value between 1-13</p>
+      {% endif %}
+      <input  class="form-control" type="number" name="text" placeholder="Enter Day of Forecast" required >
+      <br>
+      <button  class="btn btn-outline-success" type="submit">Forecast</button>
+      <a href="/train" class="btn btn-outline-danger" type="submit">Train the model</a>
+    </div>
+</form>
+
+{% if name %}
+  <p>The name of the text is: {{name}}</p>
+{% endif %}
+
 {% endblock body %}
