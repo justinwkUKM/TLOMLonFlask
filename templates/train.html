@@ -16,10 +16,15 @@
     
     <form action="/train" method="post">
     <div>
-      <button  class="btn btn-outline-success" type="submit">Train Now</button>
+      <button  class="btn btn-outline-success"   name="button_simple_model" type="submit">Train Simple Model</button>
+      <button  class="btn btn-outline-success"   name="button_sarima_model" type="submit">Train SarimaX Model</button>
     </div>
     
   </form>
+  {% if data %}
+  <p> {{data}}</p>
+  {% endif %}
+
   </div>
 </main>
 
