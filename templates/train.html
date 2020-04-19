@@ -1,31 +1,29 @@
 {% extends 'base.html' %}
 
 {% block head %}
-  <title>MLIndexPage</title>
+  <title>TLO ML Training</title>
 {% endblock head %}
 
 {% block body %}
-<br>
-<br>
-<br>
-<main role="main" class="container">
-  <div class="jumbotron">
-    <h1>TLO Forecast Model Training</h1>
-   
-    <p class="lead">This example is a quick exercise to illustrate how the TLO forecasting application works. The forecast is <b></b></p>
-    
-    <form action="/train" method="post">
-    <div>
-      <button  class="btn btn-outline-success"   name="button_simple_model" type="submit">Train Simple Model</button>
-      <button  class="btn btn-outline-success"   name="button_sarima_model" type="submit">Train SarimaX Model</button>
-    </div>
-    
-  </form>
-  {% if data %}
-  <p> {{data}}</p>
-  {% endif %}
+<main role="main" class="inner cover">
 
+  
+  <h1>Build and Train a new ML model</h1>
+  
+  <p class="lead">This example is a quick exercise to illustrate how the TLO forecasting application works. This is a one-page template from TLO for building simple and beautiful home page. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset. <b></b></p>
+  
+  <form action="/train" method="post">
+    
+  <div>
+    <button  class="btn btn-outline-success" name="button_simple_model" type="submit">Train Simple Model</button>
+    <button  class="btn btn-outline-success" name="button_sarima_model" type="submit">Train SarimaX Model</button>
   </div>
+  
+</form>
+{% if data %}
+<p> {{data}}</p>
+{% endif %}
+
 </main>
 
 {% endblock body %}

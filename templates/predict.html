@@ -1,21 +1,35 @@
 {% extends 'base.html' %}
 
 {% block head %}
-  <title>MLIndexPage</title>
+<title>TLO Predict</title>
 {% endblock head %}
 
 {% block body %}
-<br>
-<br>
-<br>
-<main role="main" class="container">
-  <div class="jumbotron">
-    <h1>TLO Forecast example</h1>
-    {% if name %}
-    <p class="lead">This example is a quick exercise to illustrate how the TLO forecasting application works. The forecast is <h2><b>{{name}}</b> orders</h2></p>
-    {% endif %}
-    <a class="btn btn-lg btn-primary" href="/" role="button">Forecast again &raquo;</a>
-  </div>
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">ML Predictions and Forecasts</h1>
+  <p class="lead">This is a one-page template from TLO for building simple and beautiful home page. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    
+  {% if name %}
+  <br>
+  <p class="lead">The forecast is <b>{{name}}</b> orders</p>
+  <br>
+  {% endif %}
+  <form action="{{ url_for('predict') }}" method="post">
+    <div>
+      {% if error %}
+      <p>Please enter the value between 1-13</p>
+      {% endif %}
+      <input class="form-control" type="number" name="text" placeholder="Enter Day of Forecast" required>
+      <br>
+      <button class="btn btn-outline-success" type="submit">Forecast</button>
+      <a href="/train" class="btn btn-outline-warning" type="submit">Train the model</a>
+    </div>
+  </form>
+  
+
+
+
+
 </main>
 
 {% endblock body %}

@@ -1,32 +1,19 @@
 {% extends 'base.html' %}
 
 {% block head %}
-  <title>MLIndexPage</title>
+<title>TLO ML HOME</title>
 {% endblock head %}
 
 {% block body %}
-<br>
-<br>
-<br>
-<h1 >Lazada Time-Series Forecasts</h1>
-<br>
-<br>
-<br>
 
-<form action="{{ url_for('predict') }}" method="post">
-    <div>
-      {% if error %}
-        <p>Please enter the value between 1-13</p>
-      {% endif %}
-      <input  class="form-control" type="number" name="text" placeholder="Enter Day of Forecast" required >
-      <br>
-      <button  class="btn btn-outline-success" type="submit">Forecast</button>
-      <a href="/train" class="btn btn-outline-danger" type="submit">Train the model</a>
-    </div>
-</form>
 
-{% if name %}
-  <p>The name of the text is: {{name}}</p>
-{% endif %}
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">TheLorry Machine Learning Platform.</h1>
+  <p class="lead">This is a one-page template from TLO for building simple and beautiful home page. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <p class="lead">
+    <a href="/predict" class="btn btn-outline-success">Start Predictions</a>
+  </p>
+
+</main>
 
 {% endblock body %}

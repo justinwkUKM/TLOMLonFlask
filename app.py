@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect
+import os
+from flask import send_from_directory
 from TLOModelPack import timeseries, train_model
 import pandas as pd
 import test
@@ -9,6 +11,12 @@ from datetime import timedelta
 
 
 app = Flask(__name__)
+
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 """Creating a route and allowing for testing the api"""
 @app.route('/api/home', methods=['POST'])
@@ -75,7 +83,7 @@ def predict():
                 447, 447+6, exog=df_forecast7[['Sales_Time']], typ='levels').rename("SARIMAX ForeCasts")
             return render_template('predict.html', name=str(round(forecast_sarimax_exog.iloc[data-1], 2)))
         else:
-            return redirect('/')
+            return redirect('/predict')
     else:
         return render_template('predict.html', name='')
 
