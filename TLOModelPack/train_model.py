@@ -96,6 +96,7 @@ def make_sarimax_model():
     auto_ar = auto_arima(df3['Orders'], exogenous=df3[['Sales_Time']], seasonal=True, m=7)
     seasonal_order = auto_ar.get_params()['seasonal_order']
     order = auto_ar.get_params()['order']
+    
     model = SARIMAX(train_data['Orders'], exog=train_data[['Sales_Time']], order=order,seasonal_order=seasonal_order)
     resultant_sarimax_model = model.fit()
     start = len(train_data)
