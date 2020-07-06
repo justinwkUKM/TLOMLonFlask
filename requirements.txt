@@ -1,9 +1,12 @@
+aniso8601==8.0.0
 autopep8==1.5.1
 certifi==2020.4.5.1
 chardet==3.0.4
 click==7.1.1
 Cython==0.29.16
 Flask==1.1.2
+Flask-RESTful==0.3.8
+flask-restful-swagger==0.20.2
 Flask-SQLAlchemy==2.4.1
 holistics==0.0a11
 idna==2.9
